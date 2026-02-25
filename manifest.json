@@ -1,0 +1,15 @@
+{
+    "name":"MEN - IT O'QITUVCHIMAN",
+    "short_name":"IT Kurs",
+    "start_url":"/",
+    "display":"standalone",
+    "background_color":"#ff69b4",
+    "theme_color":"#ff1493",
+    "icons": [
+        {
+            "src":"https://via.placeholder.com/192.png?text=❤",
+            "sizes":"192x192",
+            "type":"image/png"
+        }
+    ]
+}
