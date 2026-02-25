@@ -1,473 +1,290 @@
-/* =================================== */
-/*  UMUMIY & RESPONSIVE ASOS           */
-/* =================================== */
-*,
-*::before,
-*::after {
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@300;600&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-}
-
+html,
 body {
+    height: 100%;
+    background: #000;
+    color: #fff;
     font-family: 'Exo 2', sans-serif;
-    background: #0a001f;
-    color: white;
-    min-height: 100vh;
-    overflow-x: hidden;
-    position: relative;
-    line-height: 1.6;
 }
 
-/* =================================== */
-/*  KOSMIK FON – RESPONSIVE            */
-/* =================================== */
-.cosmic-bg {
+canvas {
     position: fixed;
-    inset: 0;
-    background: radial-gradient(circle at 30% 50%, #1a0040 0%, #0a001f 50%, #000000 100%);
+    top: 0;
+    left: 0;
     z-index: 1;
 }
 
-.neon-lines {
-    position: fixed;
-    inset: 0;
-    background:
-        linear-gradient(90deg, transparent 49%, rgba(0, 255, 255, 0.05) 50%, transparent 51%),
-        linear-gradient(0deg, transparent 49%, rgba(255, 0, 255, 0.05) 50%, transparent 51%);
-    background-size: 50px 50px;
-    animation: gridMove 30s linear infinite;
-    z-index: 2;
-    pointer-events: none;
-}
-
-@keyframes gridMove {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(50px, 50px);
-    }
-}
-
-/* =================================== */
-/*  FLOATING PARTICLES – RESPONSIVE    */
-/* =================================== */
-.floating-particles {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 3;
-}
-
-.floating-particles i {
+.intro {
+    padding: 1000px;
     position: absolute;
-    font-size: clamp(20px, 5vw, 40px);
-    color: rgba(0, 255, 255, 0.3);
-    animation: floatUp 15s infinite linear;
-    opacity: 0;
-}
-
-.floating-particles i:nth-child(odd) {
-    color: rgba(255, 0, 255, 0.3);
-    animation-duration: 20s;
-}
-
-@keyframes floatUp {
-    0% {
-        transform: translateY(120vh) rotate(0deg);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 0.7;
-    }
-
-    90% {
-        opacity: 0.7;
-    }
-
-    100% {
-        transform: translateY(-150px) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-/* Responsive joylashuv */
-.floating-particles i:nth-child(1) {
-    top: 10%;
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.floating-particles i:nth-child(2) {
-    top: 20%;
-    left: 80%;
-    animation-delay: 3s;
-}
-
-.floating-particles i:nth-child(3) {
-    top: 70%;
-    left: 15%;
-    animation-delay: 6s;
-}
-
-.floating-particles i:nth-child(4) {
-    top: 40%;
-    left: 90%;
-    animation-delay: 9s;
-}
-
-.floating-particles i:nth-child(5) {
-    top: 80%;
-    left: 30%;
-    animation-delay: 12s;
-}
-
-.floating-particles i:nth-child(6) {
-    top: 30%;
-    left: 60%;
-    animation-delay: 15s;
-}
-
-.floating-particles i:nth-child(7) {
-    top: 60%;
-    left: 70%;
-    animation-delay: 18s;
-}
-
-.floating-particles i:nth-child(8) {
-    top: 90%;
-    left: 50%;
-    animation-delay: 21s;
-}
-
-.floating-particles i:nth-child(9) {
-    top: 15%;
-    left: 40%;
-    animation-delay: 5s;
-}
-
-.floating-particles i:nth-child(10) {
     top: 50%;
-    left: 5%;
-    animation-delay: 10s;
-}
-
-/* =================================== */
-/*  EKRAN VA PORTAL KARTA              */
-/* =================================== */
-.screen {
-    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
     z-index: 10;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: clamp(20px, 5vw, 40px);
+    animation: fadeOut 3s forwards;
 }
 
-.portal-card {
-    background: rgba(15, 5, 40, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 255, 255, 0.4);
-    padding: clamp(40px, 8vw, 80px) clamp(30px, 6vw, 60px);
-    border-radius: 30px;
-    text-align: center;
-    max-width: 700px;
-    width: 100%;
-    box-shadow: 0 0 120px rgba(0, 255, 255, 0.5);
-    position: relative;
-    overflow: hidden;
+@keyframes fadeOut {
+
+    0%,
+    70% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
-/* =================================== */
-/*  ANIMATSIYALAR – RESPONSIVE         */
-/* =================================== */
-.glitch-title {
+.intro h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(2.5rem, 10vw, 5.5rem);
-    font-weight: 900;
-    color: #00ffff;
-    text-shadow: 0 0 30px #00ffff;
-    animation: glitch 4s infinite;
-    letter-spacing: 0.05em;
-}
-
-@keyframes glitch {
-
-    0%,
-    100% {
-        text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
-    }
-
-    50% {
-        text-shadow: 6px 6px 0 #ff00ff, -6px -6px 0 #00ff00;
-    }
-}
-
-.animated-text {
-    font-size: clamp(1.8rem, 7vw, 3.5rem);
-    font-weight: 900;
-    margin: 2rem 0;
-    color: #ff00ff;
-}
-
-.animated-text span {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: appear 0.6s forwards;
-}
-
-@keyframes appear {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Hologram doira */
-.hologram-circle {
-    width: clamp(150px, 40vw, 250px);
-    height: clamp(150px, 40vw, 250px);
-    margin: 3rem auto;
-    position: relative;
-}
-
-.hologram {
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, #00ffff, #ff00ff);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: clamp(60px, 15vw, 100px);
-    animation: hologram 10s infinite;
-    box-shadow: 0 0 100px #00ffff;
-}
-
-@keyframes hologram {
-
-    0%,
-    100% {
-        transform: rotate(0) scale(1);
-        filter: hue-rotate(0deg);
-    }
-
-    50% {
-        transform: rotate(15deg) scale(1.15);
-        filter: hue-rotate(180deg);
-    }
-}
-
-.neon-text {
-    color: #00ffff;
-    text-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff;
-    font-size: clamp(1.5rem, 5vw, 2.8rem);
-    margin: 2rem 0;
-}
-
-/* =================================== */
-/*  XUSUSIYATLAR & TUGMALAR            */
-/* =================================== */
-.holo-features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: clamp(10px, 3vw, 20px);
-    margin: 3rem 0;
-}
-
-.holo-features div {
-    background: rgba(0, 255, 255, 0.15);
-    padding: clamp(12px, 3vw, 18px) clamp(20px, 5vw, 40px);
-    border-radius: 50px;
-    border: 1px solid #00ffff;
-    font-weight: bold;
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
-    backdrop-filter: blur(10px);
-}
-
-.input-glow input {
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid #00ffff;
-    color: white;
-    padding: clamp(16px, 4vw, 22px);
-    border-radius: 50px;
-    font-size: clamp(1.1rem, 4vw, 1.3rem);
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
-    outline: none;
-    transition: all 0.3s;
-}
-
-.input-glow input:focus {
-    box-shadow: 0 0 60px rgba(0, 255, 255, 0.9);
-    border-color: #ff00ff;
-}
-
-a {
-    text-decoration: none;
-    /* 1-usul – eng oddiy va ishonchli */
-}
-
-/* Neon tugma */
-.btn-neon {
-    background: transparent;
-    border: 3px solid #ff00ff;
-    color: #ff00ff;
-    padding: clamp(16px, 4vw, 22px) clamp(50px, 10vw, 90px);
-    border-radius: 50px;
-    font-size: clamp(1.2rem, 4vw, 1.6rem);
-    font-weight: bold;
-    margin: 1.5rem 0;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.5s;
-}
-
-.btn-neon span {
-    position: relative;
-    z-index: 2;
-}
-
-.btn-neon::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, #ff00ff, transparent);
-    transition: 0.8s;
-}
-
-.btn-neon:hover::before {
-    left: 100%;
-}
-
-.btn-neon:hover {
-    box-shadow: 0 0 50px #ff00ff;
-}
-
-/* Pulse tugma */
-.btn-pulse {
-    background: linear-gradient(45deg, #ff00ff, #00ffff);
-    padding: clamp(20px, 5vw, 30px) clamp(60px, 12vw, 100px);
-    font-size: clamp(1.8rem, 6vw, 2.5rem);
-    border: none;
-    border-radius: 60px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    animation: pulse 2s infinite;
-    box-shadow: 0 0 60px rgba(255, 0, 255, 0.7);
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.08);
-    }
-}
-
-/* =================================== */
-/*  QO‘SHIMCHA ELEMENTLAR              */
-/* =================================== */
-.counter {
-    margin-top: 3rem;
-    font-size: clamp(1.2rem, 4vw, 1.5rem);
-}
-
-.number {
-    font-size: clamp(2rem, 7vw, 3rem);
-    color: #00ffff;
-    font-weight: bold;
-    text-shadow: 0 0 30px #00ffff;
-}
-
-.kurs-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: clamp(20px, 5vw, 40px);
-}
-
-.kurs-org-header {
-    background: rgba(10, 0, 30, 0.9);
-    padding: clamp(30px, 6vw, 50px);
-    border-radius: 30px;
-    backdrop-filter: blur(20px);
-    text-align: center;
-}
-
-.logo {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-size: 8rem;
     background: linear-gradient(45deg, #00ffff, #ff00ff);
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
     color: transparent;
+    text-shadow: 0 0 80px #0ff;
+}
+
+.intro p {
+    font-size: 3rem;
+    color: #0ff;
+    text-shadow: 0 0 50px #0ff;
+}
+
+.main {
+    z-index: 5;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s 4s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 2;
+    }
+}
+
+.main h2 {
+    font-size: 6rem;
+    margin: 80px 0;
+    background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 100px #f0f;
+}
+
+.buttons {
+    margin-top: 120px;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.portal {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.8s;
+    background: #000;
+    box-shadow: 0 0 60px rgba(0, 255, 255, 0.9);
+    text-decoration: none;
+    z-index: 10;
+}
+
+.portal:hover {
+    transform: scale(1.15);
+}
+
+/* 1-DARS – KO‘K */
+.portal-1::before {
+    background: conic-gradient(#00ffff, #00ffea, #00d2ff, #0099ff, #00ffff);
+}
+
+.portal-1:hover {
+    box-shadow: 0 0 150px #0ff, 0 0 200px #0cf;
+}
+
+.portal-2::before {
+    background: conic-gradient(#00ffff, #00ffea, #00d2ff, #0099ff, #00ffff);
+}
+
+.portal-2:hover {
+    box-shadow: 0 0 150px #0ff, 0 0 200px #0cf;
+}
+
+.portal-3::before {
+    background: conic-gradient(#00ffff, #00ffea, #00d2ff, #0099ff, #00ffff);
+}
+
+.portal-3:hover {
+    box-shadow: 0 0 150px #0ff, 0 0 200px #0cf;
+}
+
+.portal-4::before {
+    background: conic-gradient(#00ffff, #00ffea, #00d2ff, #0099ff, #00ffff);
+}
+
+.portal-4:hover {
+    box-shadow: 0 0 150px #0ff, 0 0 200px #0cf;
+}
+
+.portal-5::before {
+    background: conic-gradient(#00ffff, #00ffea, #00d2ff, #0099ff, #00ffff);
+}
+
+.portal-5:hover {
+    box-shadow: 0 0 150px #0ff, 0 0 200px #0cf;
+}
+
+.portal-6::before {
+    background: conic-gradient(#00ffff, #00ffea, #00d2ff, #0099ff, #00ffff);
+}
+
+.portal-6:hover {
+    box-shadow: 0 0 150px #0ff, 0 0 200px #0cf;
+}
+
+.portal-7::before {
+    background: conic-gradient(#00ffff, #00ffea, #00d2ff, #0099ff, #00ffff);
+}
+
+.portal-7:hover {
+    box-shadow: 0 0 150px #0ff, 0 0 200px #0cf;
+}
+
+.portal-8::before {
+    background: conic-gradient(#00ffff, #00ffea, #00d2ff, #0099ff, #00ffff);
+}
+
+.portal-8:hover {
+    box-shadow: 0 0 150px #0ff, 0 0 200px #0cf;
+}
+
+.portal-9::before {
+    background: conic-gradient(#00ffff, #00ffea, #00d2ff, #0099ff, #00ffff);
+}
+
+.portal-9:hover {
+    box-shadow: 0 0 150px #0ff, 0 0 200px #0cf;
+}
+
+.portal-10::before {
+    background: conic-gradient(#00ffff, #00ffea, #00d2ff, #0099ff, #00ffff);
+}
+
+.portal-10:hover {
+    box-shadow: 0 0 150px #0ff, 0 0 200px #0cf;
+}
+
+.portal-11::before {
+    background: conic-gradient(#00ffff, #00ffea, #00d2ff, #0099ff, #00ffff);
+}
+
+.portal-11:hover {
+    box-shadow: 0 0 150px #0ff, 0 0 200px #0cf;
+}
+
+.portal-12::before {
+    background: conic-gradient(#00ffff, #00ffea, #00d2ff, #0099ff, #00ffff);
+}
+
+.portal-12:hover {
+    box-shadow: 0 0 150px #0ff, 0 0 200px #0cf;
+}
+
+.portal-13::before {
+    background: conic-gradient(#00ffff, #00ffea, #00d2ff, #0099ff, #00ffff);
+}
+
+.portal-13:hover {
+    box-shadow: 0 0 150px #0ff, 0 0 200px #0cf;
+}
+
+.portal-14::before {
+    background: conic-gradient(#00ffff, #00ffea, #00d2ff, #0099ff, #00ffff);
+}
+
+.portal-14:hover {
+    box-shadow: 0 0 150px #0ff, 0 0 200px #0cf;
+}
+
+
+/* QIZIQISHLAR – PUSHTI */
+.qiziqish-1::before {
+    background: conic-gradient(#ff00ff, #ff3399, #ff006e, #ffd500, #ff00ff);
+}
+
+.qiziqish-1:hover {
+    box-shadow: 0 0 150px #f0f, 0 0 200px #f09;
+}
+
+.portal::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.portal::after {
+    content: attr(data-title);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
     font-weight: 900;
+    color: white;
+    text-shadow: 0 0 40px #000;
+    z-index: 2;
 }
 
-.glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 25px;
-    padding: clamp(30px, 6vw, 50px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.6s ease;
+.portal .core {
+    position: absolute;
+    inset: 12%;
+    background: #000000;
+    border-radius: 50%;
+    z-index: 1;
 }
-
-.glow-card:hover {
-    box-shadow: 0 0 80px rgba(0, 255, 255, 0.7);
-    transform: translateY(-20px);
+.main{
+    position: absolute;
+    z-index: 1;
 }
-
-.hidden {
-    display: none !important;
-}
-
-/* =================================== */
-/*  MOBIL OPTIMALLASHTIRISH            */
-/* =================================== */
 @media (max-width: 768px) {
-    .holo-features {
-        gap: 15px;
+    .buttons{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem;
     }
-
-    .btn-neon,
-    .btn-pulse {
-        width: 90%;
-        margin: 1.5rem auto;
-        display: block;
+    .intro h1{
+         text-align: center;
+         font-size: 4rem;
     }
-}
-
-@media (max-width: 480px) {
-    .portal-card {
-        padding: 2.5rem 1.5rem;
-    }
-
-    .glitch-title {
-        font-size: 3.2rem;
-    }
-}
+  }
